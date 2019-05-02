@@ -101,15 +101,15 @@
     </div>
     <div id="global-cookie-message">
 
-        <p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>
+        <p>F4ERP uses cookies to make the site simpler. <a href=\"https://www.f4erp.com/help/cookies\">Find out more about cookies</a></p>
 
     </div>
     <header role="banner" id="global-header" class="${properties.kcHeaderClass!} with-proposition">
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.22.1" width="36" height="32" alt=""> GOV.UK
+            <a href="https://www.f4erp.uk" title="Go to the F4ERP homepage" id="logo" class="content">
+              F4ERP
             </a>
           </div>
         </div>
