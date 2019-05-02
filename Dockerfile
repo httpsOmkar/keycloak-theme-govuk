@@ -1,10 +1,5 @@
 FROM busybox
 
-RUN mkdir /govuk
-ADD govuk /govuk
-
-RUN mkdir /govuk-internal
-ADD govuk-internal /govuk-internal
-
-RUN mkdir /govuk-social-providers
-ADD govuk-social-providers /govuk-social-providers
+COPY govuk /govuk
+COPY govuk-internal /govuk-internal
+COPY govuk-social-providers /govuk-social-providers
