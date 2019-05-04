@@ -55,8 +55,7 @@
         </script>
         
         <link rel="icon" href="${resourceUrl}/app/assets/img/favicon.ico" type="image/x-icon"/>
-
-        <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@2.6.6/patternfly.min.css">
+        <link rel="stylesheet" href="${resourceUrl}/node_modules/@patternfly/patternfly/patternfly.min.css">
 
         <script src="${authUrl}/js/keycloak.js"></script>
         
@@ -86,17 +85,7 @@
 
     <body>
 
-        <script>
-            function loadSystemJs() {
-                loadjs("/systemjs.config.js", function() {
-                    System.import('${resourceUrl}/Main.js').catch(function (err) {
-                        console.error(err);
-                    });
-                });
-            }
-        </script>
-
-        <script type="application/javascript" src="https://raw.githubusercontent.com/systemjs/systemjs/master/dist/system.min.js" onload="loadSystemJs()"></script>
+        <script src="https://raw.githubusercontent.com/systemjs/systemjs/master/dist/system.min.js"></script>
 
         <script>
             var keycloak = Keycloak('${authUrl}/realms/${realm.name}/account/keycloak.json');
@@ -109,6 +98,12 @@
                     document.getElementById("signOutButton").style.display='inline';
                     document.getElementById("signOutLink").style.display='inline';
                 }
+
+                loadjs("/systemjs.config.js", function() {
+                    System.import('${resourceUrl}/Main.js').catch(function (err) {
+                        console.error(err);
+                    });
+                });
             }).error(function() {
                 alert('failed to initialize keycloak');
             });
@@ -124,12 +119,12 @@
     </#if>
     <style>
         .pf-c-background-image {
-            --pf-c-background-image--BackgroundImage: url('https://unpkg.com/@patternfly/patternfly@2.6.6/assets/images/pfbg_576.jpg');
-            --pf-c-background-image--BackgroundImage-2x: url('https://unpkg.com/@patternfly/patternfly@2.6.6/assets/images/pfbg_576@2x.jpg');
-            --pf-c-background-image--BackgroundImage--sm: url('https://unpkg.com/@patternfly/patternfly@2.6.6/assets/images/pfbg_768.jpg');
-            --pf-c-background-image--BackgroundImage--sm-2x: url('https://unpkg.com/@patternfly/patternfly@2.6.6/assets/images/pfbg_768@2x.jpg');
-            --pf-c-background-image--BackgroundImage--lg: url('https://unpkg.com/@patternfly/patternfly@2.6.6/assets/images/pfbg_1200.jpg');
-            --pf-c-background-image--Filter: url('https://unpkg.com/@patternfly/patternfly@2.6.6/assets/images/background-filter.svg#image_overlay');
+            --pf-c-background-image--BackgroundImage: url('${resourceUrl}/node_modules/@patternfly/patternfly/assets/images/pfbg_576.jpg');
+            --pf-c-background-image--BackgroundImage-2x: url('${resourceUrl}/node_modules/@patternfly/patternfly/assets/images/pfbg_576@2x.jpg');
+            --pf-c-background-image--BackgroundImage--sm: url('${resourceUrl}/node_modules/@patternfly/patternfly/assets/images/pfbg_768.jpg');
+            --pf-c-background-image--BackgroundImage--sm-2x: url('${resourceUrl}/node_modules/@patternfly/patternfly/assets/images/pfbg_768@2x.jpg');
+            --pf-c-background-image--BackgroundImage--lg: url('${resourceUrl}/node_modules/@patternfly/patternfly/assets/images/pfbg_1200.jpg');
+            --pf-c-background-image--Filter: url('${resourceUrl}/node_modules/@patternfly/patternfly/assets/images/background-filter.svg#image_overlay');
         }
     </style>
         
