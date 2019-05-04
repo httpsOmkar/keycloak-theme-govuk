@@ -16,7 +16,7 @@
 
 import * as React from 'react';
 
-import {Msg} from '../widgets/Msg';
+import {Msg} from './Msg';
 
 import {ArrowIcon} from '@patternfly/react-icons';
  
