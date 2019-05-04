@@ -3,7 +3,7 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': resourceUrl + '/node_modules/'
+      'npm:': 'https://unpkg.com/'
     },
     // map tells the System loader where to look for things
     map: {

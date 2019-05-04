@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "keycloak-preview account management written in React",
   "scripts": {
-    "build": "tsc --noImplicitAny --strictNullChecks --jsx react -p  && npm run lint" ,
-    "build:watch": "tsc --noImplicitAny --strictNullChecks --jsx react -p  -w" ,
+    "build": "tsc --noImplicitAny --strictNullChecks --jsx react -p  && npm run lint",
+    "build:watch": "tsc --noImplicitAny --strictNullChecks --jsx react -p  -w",
     "lint": "eslint --ignore-pattern *.d.ts ./**/*.ts*"
   },
   "keywords": [],
