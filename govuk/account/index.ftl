@@ -87,6 +87,18 @@
     <body>
 
         <script>
+            function loadSystemJs() {
+                loadjs("/systemjs.config.js", function() {
+                    System.import('${resourceUrl}/Main.js').catch(function (err) {
+                        console.error(err);
+                    });
+                });
+            }
+        </script>
+
+        <script type="application/javascript" src="https://raw.githubusercontent.com/systemjs/systemjs/master/dist/system.min.js" onload="loadSystemJs()"></script>
+
+        <script>
             var keycloak = Keycloak('${authUrl}/realms/${realm.name}/account/keycloak.json');
             keycloak.init({onLoad: 'check-sso'}).success(function(authenticated) {
                 toggleReact();
@@ -97,14 +109,6 @@
                     document.getElementById("signOutButton").style.display='inline';
                     document.getElementById("signOutLink").style.display='inline';
                 }
-                    
-                loadjs("https://raw.githubusercontent.com/systemjs/systemjs/master/dist/system.min.js", function() {
-                    loadjs("/systemjs.config.js", function() {
-                        System.import('${resourceUrl}/Main.js').catch(function (err) {
-                            console.error(err);
-                        });
-                    });
-                });
             }).error(function() {
                 alert('failed to initialize keycloak');
             });
