@@ -1,5 +1,4 @@
 # ignore typescript-generated files 
-*.js
 *.js.map
 
 # ignore keycloak.json - we won't need this much longer
