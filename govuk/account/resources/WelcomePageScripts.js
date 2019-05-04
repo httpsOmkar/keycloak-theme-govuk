@@ -84,10 +84,12 @@ var toggleMobileChooseLocale = function() {
 
 var loadjs = function (url, loadListener) {
     const script = document.createElement("script");
-    script.src = resourceUrl + url;
+    if (url.startsWith('http')) {
+        script.src = url;
+    } else {
+        script.src = resourceUrl + url;
+    }
     if (loadListener)
         script.addEventListener("load", loadListener);
     document.head.appendChild(script);
 };
-
-
