@@ -55,7 +55,7 @@
         </script>
         
         <link rel="icon" href="${resourceUrl}/app/assets/img/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="${resourceUrl}/node_modules/@patternfly/patternfly/patternfly.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@2.6.6/patternfly.min.css">
 
         <script src="${authUrl}/js/keycloak.js"></script>
         
@@ -85,7 +85,7 @@
 
     <body>
 
-        <script src="https://raw.githubusercontent.com/systemjs/systemjs/master/dist/system.min.js"></script>
+        <script src="https://unpkg.com/systemjs@0.20.17/dist/system.src.js"></script>
 
         <script>
             var keycloak = Keycloak('${authUrl}/realms/${realm.name}/account/keycloak.json');
